@@ -1,0 +1,9 @@
+author: FreezyExp
+database: false
+description: "TidyUp - magnetic chests. Is your inventory a mess? Tired of having to manually open lots of chests? Have no fear! Chests are now magnets!\n
+They will pick up anything they already contain."
+main: me.freezyexp.TidyUp.TidyUp
+name: TidyUp
+version: '0.1'
+depend: [LWC]
+softdepend: [LWC]
