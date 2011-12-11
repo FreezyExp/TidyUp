@@ -4,6 +4,6 @@ description: "TidyUp - magnetic chests. Is your inventory a mess? Tired of havin
 They will pick up anything they already contain."
 main: me.freezyexp.TidyUp.TidyUp
 name: TidyUp
-version: '0.1'
+version: '0.2'
 depend: [LWC]
 softdepend: [LWC]
