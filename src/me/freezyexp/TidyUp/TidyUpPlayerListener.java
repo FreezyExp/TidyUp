@@ -12,7 +12,8 @@ import org.bukkit.block.BlockState;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerListener;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
@@ -20,7 +21,7 @@ import org.bukkit.plugin.Plugin;
 import com.griefcraft.lwc.*;
 import com.griefcraft.model.Protection;
 
-public class TidyUpPlayerListener extends PlayerListener {
+public class TidyUpPlayerListener implements Listener {
 	
 	public TidyUp tidyMain;	
 	public LWC lwc;	
@@ -38,6 +39,7 @@ public class TidyUpPlayerListener extends PlayerListener {
 		}
 	}
 	
+	@EventHandler
 	public void onPlayerDropItem(PlayerDropItemEvent event)
 	{		
 		Item item = event.getItemDrop();

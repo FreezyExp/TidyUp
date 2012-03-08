@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.event.*;
 
 public class TidyUp extends JavaPlugin
 {
@@ -36,7 +35,7 @@ public class TidyUp extends JavaPlugin
 		radius 		= config.getInt("pickupRadius", 10);		
 		pickupDelay = config.getInt("playerPickupDelay", 3);
 		
-		pm.registerEvent(Event.Type.PLAYER_DROP_ITEM, playerListener, Event.Priority.Normal, this);		
+		pm.registerEvents(playerListener, this);		
 	}
 
 }
