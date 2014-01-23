@@ -1,9 +1,46 @@
 author: FreezyExp
 database: false
 description: "TidyUp - magnetic chests. Is your inventory a mess? Tired of having to manually open lots of chests? Have no fear! Chests are now magnets!\n
-They will pick up anything they already contain."
+They will pick up anything they already contain. As an added bonus, stacks are stuffed together and sorted based on material. So TIDY! :-O"
 main: me.freezyexp.TidyUp.TidyUp
 name: TidyUp
-version: '0.2'
+version: '0.4.1'
 depend: [LWC]
 softdepend: [LWC]
+commands:
+    tidyup:
+        description: display the list of tidyup commands 
+        usage: /tidyup        
+permissions:
+    tidyup.*:
+        description: All TidyUp settings
+        default: false
+    tidyup.user:
+        description: Easy setup permissions for players
+        default: false
+        children:
+            tidyup.canGrab: true
+            tidyup.setGrab: true
+            tidyup.canOCD:  true
+            tidyup.canAutoOCD: true
+    tidyup.user.ocd:
+        description: Easy access to all OCD permissions
+        default: false
+        children:
+            tidyup.canOCD:  true
+            tidyup.canAutoOCD: true            
+    tidyup.canGrab:
+        description: Player drops may be grabbed
+        default: false
+    tidyup.setGrab:
+        description: Player may decide the setting of the chests that grab dropped items
+        default: false
+    tidyup.canOCD:
+        description: Players can punch chests they can access with empty hand to sort them, also works on non-lwc chests.
+        default: false
+    tidyup.canAutoOCD:
+        description: Items grabbed by a chest, cause that chests inventory to reorganize
+        default: false
+    tidyup.admin:
+        description: Allow the use of commands with other player names \tidyup [playername] <command> and other admin commands
+        default: op
